@@ -2,14 +2,16 @@ import { UserLogin } from "../interfaces/UserLogin";
 
 const login = async (userInfo: UserLogin) => {
   // TODO: make a POST request to the login route
-  const request = {
+  const response = await fetch('/api/login', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+    },
     body: JSON.stringify(userInfo),
-  }
-  const response = await fetch('/login', request);
-  const loginInfo = await response.text();
-  return loginInfo;
+  });
+
+  const data = await response.json();
+  return { token: data.token };
 }
 
 
