@@ -1,4 +1,4 @@
 # Kanban-Board
 
 ## Description
-Candidate search application that calls the GitHub API and renders data in the browser.
+Added authentication with JWT to an existing Kanban board application.
